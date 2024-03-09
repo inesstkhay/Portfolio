@@ -1,0 +1,143 @@
+/* Styles communs pour toutes les pages */
+@font-face {
+    font-family: 'MS Sans Serif';
+    src: url('ms-sans-serif.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    flex-direction: column;
+    cursor: url('cursor-normal.png') 10 10, auto;
+    box-sizing: border-box; /* Add this line */
+}
+
+::-webkit-scrollbar {
+    width: 1px; /* Set the width of the scrollbar */
+    height: 15px; /* Set the height of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #c0c0c000; /* Set the track color */
+}
+
+
+h1  {
+    font-family: 'MS Sans Serif', sans-serif;
+    font-size: 1.5em;
+    margin: 20px;
+    margin-left: 20px; /* Ajoute une marge de 20px à gauche */
+}
+
+h2  {
+    font-family: 'MS Sans Serif', sans-serif;
+    font-size: 1.1em;
+    text-align: left; /* Aligns the text to the left */
+    margin-right: 20px; /* Ajoute une marge de 20px à droite */
+    margin-left: 20px; /* Ajoute une marge de 20px à gauche */
+}
+
+p {
+    font-family: 'MS Sans Serif', sans-serif;
+    font-size: 1em;
+    text-align : justify;
+    margin-right: 20px; /* Ajoute une marge de 20px à droite */
+    margin-left: 20px; /* Ajoute une marge de 20px à gauche */
+}
+
+
+/* Styles a propos */
+
+.banner-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-container img {
+    width: 100%; /* Ajuste l'image à la largeur de son conteneur */
+    height: auto; /* Permet à l'image de conserver ses proportions */
+}
+
+.container {
+    text-align: left;
+    font-family: "MS Sans Serif", sans-serif;
+    display: flex;
+    justify-content: center;
+}
+  
+  .column {
+    width: 300px;
+    margin: 0 20px;
+    text-align: center;
+  }
+  
+  .column img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .column p {
+    margin-top: 10px;
+  }
+
+
+  footer {
+    text-align: center;
+    cursor: url('cursor-hover.png') 30 30, auto;
+  }
+  
+  
+
+a:link {
+  text-decoration: none;
+  color: blue;
+  cursor: url('cursor-hover.png') 30 30, auto;
+}
+
+/* Target visited links */
+a:visited {
+  text-decoration: none;
+  color: blue;
+  cursor: url('cursor-hover.png') 30 30, auto;
+}
+
+/* Target links on hover */
+a:hover {
+  text-decoration: underline;
+  cursor: url('cursor-hover.png') 30 30, auto;
+}
+
+
+  /*grille*/
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+
+.grid-item {
+    width: 100%;
+    padding-bottom: 100%; /* For a square aspect ratio */
+    position: relative;
+    overflow: hidden;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.grid-container:hover, .grid-item img:hover {
+    cursor: url('cursor-hover.png') 30 30, auto;
+}
+
+

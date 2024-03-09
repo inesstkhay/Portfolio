@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>iness.png</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+    </style>
+</head>
+<body class="home">
+    <div class="background-container">
+        <div class="about-button">
+            <a href="#" class="about-link" onclick="openInIframe('about.html')"> <!-- Modified link with onclick -->
+                <img src="9.png" alt="À propos">
+            </a>
+        </div>
+        <div class="work-button">
+            <a href="#" class="work-link" onclick="openInIframe('work.html')"> <!-- Modified link with onclick -->
+                <img src="7.png" alt="Expériences">
+            </a>
+        </div>
+        <div class="ref-button">
+            <a href="#" class="ref-link" onclick="openInIframe('ref.html')"> <!-- Modified link with onclick -->
+                <img src="8.png" alt="Expériences">
+            </a>
+        </div>
+        <div class="archi101-button">
+            <a href="#" class="archi101-link" onclick="openInIframe('archi101.html')"> <!-- Modified link with onclick -->
+                <img src="2.png" alt="Archi101">
+            </a>
+        </div>
+        <div class="game-button">
+            <a href="#" class="game-link" onclick="openInIframe('game.html')"> <!-- Modified link with onclick -->
+                <img src="1.png" alt="Game">
+            </a>
+        </div>
+        <div class="peyriac-button">
+            <a href="#" class="peyriac-link" onclick="openInIframe('peyriac.html')"> <!-- Modified link with onclick -->
+                <img src="11.png" alt="Peyriac">
+            </a>
+        </div>
+        <div class="inviter-button">
+            <a href="#" class="inviter-link" onclick="openInIframe('inviter.html')"> <!-- Modified link with onclick -->
+                <img src="6.png" alt="Inviter">
+            </a>
+        </div>
+        <div class="archifolies-button">
+            <a href="#" class="archifolies-link" onclick="openInIframe('archifolies.html')"> <!-- Modified link with onclick -->
+                <img src="12.png" alt="Archifolies">
+            </a>
+        </div>
+        <div class="utopie1-button">
+            <a href="#" class="utopie1-link" onclick="openInIframe('utopie1.html')"> <!-- Modified link with onclick -->
+                <img src="3.png" alt="Utopie1">
+            </a>
+        </div>
+        <div class="utopie2-button">
+            <a href="#" class="utopie2-link" onclick="openInIframe('utopie2.html')"> <!-- Modified link with onclick -->
+                <img src="4.png" alt="Utopie2">
+            </a>
+        </div>
+        <div class="utopie3-button">
+            <a href="#" class="utopie3-link" onclick="openInIframe('utopie3.html')"> <!-- Modified link with onclick -->
+                <img src="5.png" alt="Utopie3">
+            </a>
+        </div>
+    </div>
+
+    <div id="iframe-modal" class="modal">
+        <span class="close" onclick="closeIframeModal()">&times; </span>
+        <iframe id="iframe-content" src=""></iframe>
+    </div>
+    <div class="footer-bar">
+        <div id="notificationArea">
+            <span id="clock"></span>
+          </span>
+        </div>
+    </div>
+    
+    
+
+    <script src="script.js"></script>
+    <script>
+        function openInIframe(url) {
+            var modal = document.getElementById('iframe-modal');
+            var content = document.getElementById('iframe-content');
+    
+            content.src = url;
+            modal.style.display = 'block';
+    
+            // Trigger the apparition effect after a short delay (adjust the delay as needed)
+            setTimeout(function() {
+                modal.classList.add('appear');
+            }, 100);
+        }
+    
+        function closeIframeModal() {
+            var modal = document.getElementById('iframe-modal');
+            var content = document.getElementById('iframe-content');
+    
+            modal.classList.remove('appear');
+    
+            // Hide the modal after the transition is complete (adjust the delay to match the transition duration)
+            setTimeout(function() {
+                modal.style.display = 'none';
+                content.src = '';
+            }, 1000); // 1000 milliseconds = 1 second (adjust as needed)
+        }
+
+
+      function updateClock() {
+          var d = new Date();
+          var h = d.getHours() % 12;
+          var m = d.getMinutes();
+          var a = d.getHours() < 12 ? "AM" : "PM";
+          if (h == 0)
+              h = 12;
+          document.getElementById("clock").innerHTML = h + ":" + (m < 10 ? "0" : "") + m + " " + a;
+          setTimeout(updateClock, 1000);
+      }
+      updateClock();
+    </script>
+</body>
+</html>
