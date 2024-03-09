@@ -249,7 +249,7 @@ body.home {
 
 .ref-button {
     position: fixed;
-    top: 70%; /* Use percentage for vertical positioning */
+    top: 69%; /* Use percentage for vertical positioning */
     left: 85%; /* Use percentage for horizontal positioning */
     transform: translate(-50%, -50%); /* Center the button */
 }
