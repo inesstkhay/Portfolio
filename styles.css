@@ -14,8 +14,8 @@ display: block;
 position: fixed;
 top: 0;
 left: 0;
-width: 100%; /* Set it to 100% to cover the entire viewport */
-height: 100vh; /* Set it to 100% to cover the entire viewport */
+width: 100%; 
+height: 100vh; 
 background-color: #000000;
 color: #ffffff;
 padding: 10px;
@@ -48,15 +48,15 @@ body.chargement {
 
 .bios1  {
     position: fixed;
-    top: 13vh; /* Adjust as needed */
-    left: 20vw; /* Adjust as needed */
+    top: 13vh; 
+    left: 20vw; 
     transform: translate(-50%, -50%);
 }
 
 .bios2  {
     position: fixed;
-    top: 20vh; /* Adjust as needed */
-    left: 80%; /* Adjust as needed */
+    top: 20vh; 
+    left: 80%; 
     transform: translate(-50%, -50%);
 }
 
@@ -74,18 +74,18 @@ body.chargement {
     font-family: 'MS Sans Serif', sans-serif;
     font-size: 1.5em;
     color: rgb(255, 255, 255);
-    white-space: pre; /* Allow for line breaks */
+    white-space: pre; 
     overflow: hidden;
     position: absolute;
-    top: 5%; /* Position at the top */
-    left: 13vw; /* Position at the left */
+    top: 5%; 
+    left: 13vw; 
 
 }
 
 #loading-text::after {
     content: "_";
     display: inline-block;
-    color: rgb(255, 255, 255); /* Set cursor color to grey */
+    color: rgb(255, 255, 255); 
     animation: blink 1s infinite;
 }
 
@@ -107,12 +107,12 @@ body.chargement {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100vw; /* Use viewport width instead of percentage */
-    height: 4.5vh; /* Adjust the height as needed */
-    background-image: url('startbar.png'); /* Specify your footer image */
-    background-size: 100% 100%; /* Ensure the background image covers the entire area */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    z-index: 1000; /* Ensure the footer is on top of other content */
+    width: 100vw; 
+    height: 4.5vh; 
+    background-image: url('startbar.png'); 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; 
+    z-index: 1000; 
     cursor: url('cursor-normal.png') 10 10, auto;
 }
 
@@ -122,7 +122,7 @@ body.chargement {
 
 
 .background-container {
-    position: sticky; /* Ensure the container has a non-static position */
+    position: sticky; 
     width: 100%;
     height: 100%;
 }
@@ -139,7 +139,7 @@ body.home {
 }
 
 
-  /*ouvrir page par dessus l'autre: a faire*/
+  /*ouvrir page par dessus l'autre*/
 
   #iframe-modal {
     display: none;
@@ -153,11 +153,11 @@ body.home {
     border: none; 
     z-index: 1;
     opacity: 0; 
-    transition: opacity 0.2s ease-in-out; /* Add a transition effect on the opacity property */
+    transition: opacity 0.2s ease-in-out; 
 }
 
 #iframe-modal.appear {
-    opacity: 1; /* Show the modal with full opacity */
+    opacity: 1; 
 }
 
 #iframe-modal::before {
@@ -169,15 +169,15 @@ body.home {
     bottom: -1%;
     background: url('border.png');
     background-size: 100% 100%; 
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Ensure background doesn't repeat */
+    background-position: center; 
+    background-repeat: no-repeat; 
     z-index: -1;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    box-sizing: border-box; 
 }
 
 #iframe-modal iframe {
-    width: calc(100% - 0px); /* Adjusted width to accommodate padding */
-    height: calc(100% - 20px); /* Adjusted height to accommodate padding */
+    width: calc(100% - 0px); 
+    height: calc(100% - 20px); 
     border: none;
 }
 
@@ -195,108 +195,108 @@ body.home {
 
   .about-button {
     position: fixed;
-    top: 25%; /* Use percentage for vertical positioning */
-    left: 85.5%; /* Use percentage for horizontal positioning */
-    transform: translate(-50%, -50%); /* Center the button */
+    top: 25%; 
+    left: 85.5%; 
+    transform: translate(-50%, -50%); 
 }
 
 .about-link {
-    display: block; /* Permet à l'image de remplir l'espace du lien */
-    width: 10vw; /* Set width to 10% of the viewport width */
-    height: auto; /* Automatically adjust height to maintain aspect ratio */
+    display: block; 
+    width: 10vw; 
+    height: auto; 
     text-decoration: none;
-    position: relative; /* Ajout de position relative pour positionner l'image absolument */
+    position: relative; 
 }
 
 .about-link img {
-    width: 100%; /* Make the image fill its parent container */
-    height: 100%; /* Make the image fill its parent container */
-    transition: transform 0.3s ease; /* Ajout d'une transition pour créer un effet fluide */
+    width: 100%; 
+    height: 100%; 
+    transition: transform 0.3s ease; 
 }
 
 .about-link:hover img {
-    transform: rotate(-30deg); /* Rotation dans le sens des aiguilles d'une montre lors du survol */
+    transform: rotate(-30deg); 
 }
 
   /*7*/
 
 .work-button {
     position: fixed;
-    top: 48%; /* Use percentage for vertical positioning */
-    left: 85%; /* Use percentage for horizontal positioning */
-    transform: translate(-50%, -50%); /* Center the button */
+    top: 48%; 
+    left: 85%; 
+    transform: translate(-50%, -50%); 
 }
 
 .work-link {
-    display: block; /* Permet à l'image de remplir l'espace du lien */
-    width: 10vw; /* Set width to 10% of the viewport width */
-    height: auto; /* Automatically adjust height to maintain aspect ratio */
+    display: block; 
+    width: 10vw; 
+    height: auto; 
     text-decoration: none;
-    position: relative; /* Ajout de position relative pour positionner l'image absolument */
+    position: relative; 
 }
 
 .work-link img {
-    width: 100%; /* Make the image fill its parent container */
-    height: 100%; /* Make the image fill its parent container */
-    transition: transform 0.3s ease; /* Ajout d'une transition pour créer un effet fluide */
+    width: 100%; 
+    height: 100%; 
+    transition: transform 0.3s ease; 
 }
 
 .work-link:hover img {
-    transform: rotate(-30deg); /* Rotation dans le sens des aiguilles d'une montre lors du survol */
+    transform: rotate(-30deg); 
 }
 
 /*8*/
 
 .ref-button {
     position: fixed;
-    top: 69%; /* Use percentage for vertical positioning */
-    left: 85%; /* Use percentage for horizontal positioning */
-    transform: translate(-50%, -50%); /* Center the button */
+    top: 69%; 
+    left: 85%; 
+    transform: translate(-50%, -50%); 
 }
 
 .ref-link {
-    display: block; /* Permet à l'image de remplir l'espace du lien */
-    width: 10vw; /* Set width to 10% of the viewport width */
-    height: auto; /* Automatically adjust height to maintain aspect ratio */
+    display: block; 
+    width: 10vw; 
+    height: auto; 
     text-decoration: none;
-    position: relative; /* Ajout de position relative pour positionner l'image absolument */
+    position: relative; 
 }
 
 .ref-link img {
-    width: 100%; /* Make the image fill its parent container */
-    height: 100%; /* Make the image fill its parent container */
-    transition: transform 0.3s ease; /* Ajout d'une transition pour créer un effet fluide */
+    width: 100%; 
+    height: 100%; 
+    transition: transform 0.3s ease; 
 }
 
 .ref-link:hover img {
-    transform: rotate(-30deg); /* Rotation dans le sens des aiguilles d'une montre lors du survol */
+    transform: rotate(-30deg); 
 }
 
 /*2*/
 
 .archi101-button {
     position: fixed;
-    top: 71%; /* Use percentage for vertical positioning */
-    left: 38%; /* Use percentage for horizontal positioning */
-    transform: translate(-50%, -50%); /* Center the button */
+    top: 71%; 
+    left: 38%; 
+    transform: translate(-50%, -50%); 
 }
 
 .archi101-link {
-    display: block; /* Permet à l'image de remplir l'espace du lien */
-    width: 10vw; /* Set width to 10% of the viewport width */
-    height: auto; /* Automatically adjust height to maintain aspect ratio */
+    display: block; 
+    width: 10vw; 
+    height: auto; 
     text-decoration: none;
-    position: relative; /* Ajout de position relative pour positionner l'image absolument */
+    position: relative; 
 }
 
 .archi101-link img {
-    width: 100%; /* Make the image fill its parent container */
-    height: 100%; /* Make the image fill its parent container */
-    transition: transform 0.3s ease; /* Ajout d'une transition pour créer un effet fluide */
+    width: 100%; 
+    height: 100%; 
+    transition: transform 0.3s ease; 
 }
 
 .archi101-link:hover img {
-    transform: rotate(30deg); /* Rotation dans le sens des aiguilles d'une montre lors du survol */
+    transform: rotate(30deg); 
 }
 
 
@@ -304,54 +304,54 @@ body.home {
 
 .game-button {
     position: fixed;
-    top: 60%; /* Use percentage for vertical positioning */
-    left: 25%; /* Use percentage for horizontal positioning */
-    transform: translate(-50%, -50%); /* Center the button */
+    top: 60%; 
+    left: 25%; 
+    transform: translate(-50%, -50%); 
 }
 
 .game-link {
-    display: block; /* Permet à l'image de remplir l'espace du lien */
-    width: 10vw; /* Set width to 10% of the viewport width */
-    height: auto; /* Automatically adjust height to maintain aspect ratio */
+    display: block; 
+    width: 10vw; 
+    height: auto; 
     text-decoration: none;
-    position: relative; /* Ajout de position relative pour positionner l'image absolument */
+    position: relative; 
 }
 
 .game-link img {
-    width: 100%; /* Make the image fill its parent container */
-    height: 100%; /* Make the image fill its parent container */
-    transition: transform 0.3s ease; /* Ajout d'une transition pour créer un effet fluide */
+    width: 100%; 
+    height: 100%; 
+    transition: transform 0.3s ease; 
 }
 
 .game-link:hover img {
-    transform: rotate(30deg); /* Rotation dans le sens des aiguilles d'une montre lors du survol */
+    transform: rotate(30deg); 
 }
 
 /*11*/
 
 .peyriac-button {
     position: fixed;
-    top: 65%; /* Use percentage for vertical positioning */
-    left: 53%; /* Use percentage for horizontal positioning */
-    transform: translate(-50%, -50%); /* Center the button */
+    top: 65%; 
+    left: 53%; 
+    transform: translate(-50%, -50%); 
 }
 
 .peyriac-link {
-    display: block; /* Permet à l'image de remplir l'espace du lien */
-    width: 10vw; /* Set width to 10% of the viewport width */
-    height: auto; /* Automatically adjust height to maintain aspect ratio */
+    display: block; 
+    width: 10vw; 
+    height: auto; 
     text-decoration: none;
-    position: relative; /* Ajout de position relative pour positionner l'image absolument */
+    position: relative; 
 }
 
 .peyriac-link img {
-    width: 100%; /* Make the image fill its parent container */
-    height: 100%; /* Make the image fill its parent container */
-    transition: transform 0.3s ease; /* Ajout d'une transition pour créer un effet fluide */
+    width: 100%; 
+    height: 100%; 
+    transition: transform 0.3s ease; 
 }
 
 .peyriac-link:hover img {
-    transform: rotate(-30deg); /* Rotation dans le sens des aiguilles d'une montre lors du survol */
+    transform: rotate(-30deg); 
 }
 
 
@@ -360,135 +360,135 @@ body.home {
 
 .inviter-button {
     position: fixed;
-    top: 45%; /* Use percentage for vertical positioning */
-    left: 56%; /* Use percentage for horizontal positioning */
-    transform: translate(-50%, -50%); /* Center the button */
+    top: 45%; 
+    left: 56%; 
+    transform: translate(-50%, -50%); 
 }
 
 .inviter-link {
-    display: block; /* Permet à l'image de remplir l'espace du lien */
-    width: 10vw; /* Set width to 10% of the viewport width */
-    height: auto; /* Automatically adjust height to maintain aspect ratio */
+    display: block; 
+    width: 10vw; 
+    height: auto; 
     text-decoration: none;
-    position: relative; /* Ajout de position relative pour positionner l'image absolument */
+    position: relative; 
 }
 
 .inviter-link img {
-    width: 100%; /* Make the image fill its parent container */
-    height: 100%; /* Make the image fill its parent container */
-    transition: transform 0.3s ease; /* Ajout d'une transition pour créer un effet fluide */
+    width: 100%; 
+    height: 100%; 
+    transition: transform 0.3s ease; 
 }
 
 .inviter-link:hover img {
-    transform: rotate(-30deg); /* Rotation dans le sens des aiguilles d'une montre lors du survol */
+    transform: rotate(-30deg); 
 }
 
 /*12*/
 
 .archifolies-button {
     position: fixed;
-    top: 25%; /* Use percentage for vertical positioning */
-    left: 59%; /* Use percentage for horizontal positioning */
-    transform: translate(-50%, -50%); /* Center the button */
+    top: 25%; 
+    left: 59%; 
+    transform: translate(-50%, -50%); 
 }
 
 .archifolies-link {
-    display: block; /* Permet à l'image de remplir l'espace du lien */
-    width: 10vw; /* Set width to 10% of the viewport width */
-    height: auto; /* Automatically adjust height to maintain aspect ratio */
+    display: block; 
+    width: 10vw; 
+    height: auto; 
     text-decoration: none;
-    position: relative; /* Ajout de position relative pour positionner l'image absolument */
+    position: relative; 
 }
 
 .archifolies-link img {
-    width: 100%; /* Make the image fill its parent container */
-    height: 100%; /* Make the image fill its parent container */
-    transition: transform 0.3s ease; /* Ajout d'une transition pour créer un effet fluide */
+    width: 100%; 
+    height: 100%; 
+    transition: transform 0.3s ease; 
 }
 
 .archifolies-link:hover img {
-    transform: rotate(-30deg); /* Rotation dans le sens des aiguilles d'une montre lors du survol */
+    transform: rotate(-30deg); 
 }
 
 /*3*/
 
 .utopie1-button {
     position: fixed;
-    top: 47%; /* Use percentage for vertical positioning */
-    left: 38%; /* Use percentage for horizontal positioning */
-    transform: translate(-50%, -50%); /* Center the button */
+    top: 47%; 
+    left: 38%; 
+    transform: translate(-50%, -50%); 
 }
 
 .utopie1-link {
-    display: block; /* Permet à l'image de remplir l'espace du lien */
-    width: 10vw; /* Set width to 10% of the viewport width */
-    height: auto; /* Automatically adjust height to maintain aspect ratio */
+    display: block; 
+    width: 10vw; 
+    height: auto; 
     text-decoration: none;
-    position: relative; /* Ajout de position relative pour positionner l'image absolument */
+    position: relative; 
 }
 
 .utopie1-link img {
-    width: 100%; /* Make the image fill its parent container */
-    height: 100%; /* Make the image fill its parent container */
-    transition: transform 0.3s ease; /* Ajout d'une transition pour créer un effet fluide */
+    width: 100%; 
+    height: 100%; 
+    transition: transform 0.3s ease; 
 }
 
 .utopie1-link:hover img {
-    transform: rotate(-30deg); /* Rotation dans le sens des aiguilles d'une montre lors du survol */
+    transform: rotate(-30deg); 
 }
 
 /*4*/
 
 .utopie2-button {
     position: fixed;
-    top: 32%; /* Use percentage for vertical positioning */
-    left: 27%; /* Use percentage for horizontal positioning */
-    transform: translate(-50%, -50%); /* Center the button */
+    top: 32%; 
+    left: 27%; 
+    transform: translate(-50%, -50%); 
 }
 
 .utopie2-link {
-    display: block; /* Permet à l'image de remplir l'espace du lien */
-    width: 10vw; /* Set width to 10% of the viewport width */
-    height: auto; /* Automatically adjust height to maintain aspect ratio */
+    display: block; 
+    width: 10vw; 
+    height: auto; 
     text-decoration: none;
-    position: relative; /* Ajout de position relative pour positionner l'image absolument */
+    position: relative; 
 }
 
 .utopie2-link img {
-    width: 100%; /* Make the image fill its parent container */
-    height: 100%; /* Make the image fill its parent container */
-    transition: transform 0.3s ease; /* Ajout d'une transition pour créer un effet fluide */
+    width: 100%; 
+    height: 100%; 
+    transition: transform 0.3s ease; 
 }
 
 .utopie2-link:hover img {
-    transform: rotate(-30deg); /* Rotation dans le sens des aiguilles d'une montre lors du survol */
+    transform: rotate(-30deg); 
 }
 
 /*5*/
 
 .utopie3-button {
     position: fixed;
-    top: 23%; /* Use percentage for vertical positioning */
-    left: 40%; /* Use percentage for horizontal positioning */
-    transform: translate(-50%, -50%); /* Center the button */
+    top: 23%; 
+    left: 40%; 
+    transform: translate(-50%, -50%); 
 }
 
 .utopie3-link {
-    display: block; /* Permet à l'image de remplir l'espace du lien */
-    width: 10vw; /* Set width to 10% of the viewport width */
-    height: auto; /* Automatically adjust height to maintain aspect ratio */
+    display: block; 
+    width: 10vw; 
+    height: auto; 
     text-decoration: none;
-    position: relative; /* Ajout de position relative pour positionner l'image absolument */
+    position: relative; 
 }
 
 .utopie3-link img {
-    width: 100%; /* Make the image fill its parent container */
-    height: 100%; /* Make the image fill its parent container */
-    transition: transform 0.3s ease; /* Ajout d'une transition pour créer un effet fluide */
+    width: 100%; 
+    height: 100%; 
+    transition: transform 0.3s ease; 
 }
 
 .utopie3-link:hover img {
-    transform: rotate(-30deg); /* Rotation dans le sens des aiguilles d'une montre lors du survol */
+    transform: rotate(-30deg); 
 }
 
 
@@ -498,9 +498,9 @@ body.home {
     font-family: 'MS Sans Serif', sans-serif;
     font-size: 0.8vw;
     z-index: 9999;
-    color: #000000; /* Change the color as desired */
+    color: #000000; 
     position: fixed;
-    bottom: 1%; /* Adjust the distance from the bottom as desired */
-    right: 1%; /* Adjust the distance from the right as desired */
+    bottom: 1%; 
+    right: 1%; 
     cursor: url('cursor-normal.png') 10 10, auto;
 }

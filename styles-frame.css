@@ -10,16 +10,16 @@ body {
     display: flex;
     flex-direction: column;
     cursor: url('cursor-normal.png') 10 10, auto;
-    box-sizing: border-box; /* Add this line */
+    box-sizing: border-box; 
 }
 
 ::-webkit-scrollbar {
-    width: 1px; /* Set the width of the scrollbar */
-    height: 15px; /* Set the height of the scrollbar */
+    width: 1px; 
+    height: 15px; 
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #c0c0c000; /* Set the track color */
+    background-color: #c0c0c000; 
 }
 
 
@@ -27,31 +27,31 @@ h1  {
     font-family: 'MS Sans Serif', sans-serif;
     font-size: 1.5em;
     margin: 20px;
-    margin-left: 20px; /* Ajoute une marge de 20px à gauche */
+    margin-left: 20px; 
 }
 
 h2  {
     font-family: 'MS Sans Serif', sans-serif;
     font-size: 1.1em;
-    text-align: left; /* Aligns the text to the left */
-    margin-right: 20px; /* Ajoute une marge de 20px à droite */
-    margin-left: 20px; /* Ajoute une marge de 20px à gauche */
+    text-align: left; 
+    margin-right: 20px; 
+    margin-left: 20px; 
 }
 
 h3  {
   font-family: 'MS Sans Serif', sans-serif;
   font-size: 1.1em;
-  text-align: center; /* Aligns the text to the left */
-  margin-right: 20px; /* Ajoute une marge de 20px à droite */
-  margin-left: 20px; /* Ajoute une marge de 20px à gauche */
+  text-align: center; 
+  margin-right: 20px; 
+  margin-left: 20px; 
 }
 
 p {
     font-family: 'MS Sans Serif', sans-serif;
     font-size: 1em;
     text-align : justify;
-    margin-right: 20px; /* Ajoute une marge de 20px à droite */
-    margin-left: 20px; /* Ajoute une marge de 20px à gauche */
+    margin-right: 20px; 
+    margin-left: 20px; 
 }
 
 
@@ -63,13 +63,13 @@ p {
 }
 
 .banner-container img {
-    width: 100%; /* Ajuste l'image à la largeur de son conteneur */
-    height: auto; /* Permet à l'image de conserver ses proportions */
+    width: 100%; 
+    height: auto; 
 }
 
 .centered-video {
-  width: 50%; /* Adjust size as needed */
-  max-width: 300px; /* Adjust maximum width as needed */
+  width: 50%; 
+  max-width: 300px; 
   display: block;
   margin: 0 auto;
 }
@@ -136,7 +136,7 @@ a:hover {
 
 .grid-item {
     width: 100%;
-    padding-bottom: 100%; /* For a square aspect ratio */
+    padding-bottom: 100%; 
     position: relative;
     overflow: hidden;
 }
