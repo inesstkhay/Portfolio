@@ -131,7 +131,7 @@ body.home {
     cursor: url('cursor-normal.png') 10 10, auto;
     position: fixed;
     background: url('fond.png') center center no-repeat;
-    background-size: 84%;
+    background-size: 83%;
     background-position-y: 5vh;
     background-color: #000000;
     width: 100%;
@@ -195,14 +195,14 @@ body.home {
 
   .about-button {
     position: fixed;
-    top: 25%; 
+    top: 26%; 
     left: 85.5%; 
     transform: translate(-50%, -50%); 
 }
 
 .about-link {
     display: block; 
-    width: 10vw; 
+    width: 8vw; 
     height: auto; 
     text-decoration: none;
     position: relative; 
@@ -222,14 +222,14 @@ body.home {
 
 .work-button {
     position: fixed;
-    top: 48%; 
+    top: 46%; 
     left: 85%; 
     transform: translate(-50%, -50%); 
 }
 
 .work-link {
     display: block; 
-    width: 10vw; 
+    width: 8vw; 
     height: auto; 
     text-decoration: none;
     position: relative; 
@@ -249,14 +249,14 @@ body.home {
 
 .ref-button {
     position: fixed;
-    top: 69%; 
+    top: 63%; 
     left: 85%; 
     transform: translate(-50%, -50%); 
 }
 
 .ref-link {
     display: block; 
-    width: 10vw; 
+    width: 8vw; 
     height: auto; 
     text-decoration: none;
     position: relative; 
@@ -276,14 +276,14 @@ body.home {
 
 .archi101-button {
     position: fixed;
-    top: 71%; 
+    top: 68%; 
     left: 38%; 
     transform: translate(-50%, -50%); 
 }
 
 .archi101-link {
     display: block; 
-    width: 10vw; 
+    width: 9vw; 
     height: auto; 
     text-decoration: none;
     position: relative; 
@@ -304,14 +304,14 @@ body.home {
 
 .game-button {
     position: fixed;
-    top: 60%; 
+    top: 56%; 
     left: 25%; 
     transform: translate(-50%, -50%); 
 }
 
 .game-link {
     display: block; 
-    width: 10vw; 
+    width: 9vw; 
     height: auto; 
     text-decoration: none;
     position: relative; 
@@ -338,7 +338,7 @@ body.home {
 
 .peyriac-link {
     display: block; 
-    width: 10vw; 
+    width: 9vw; 
     height: auto; 
     text-decoration: none;
     position: relative; 
@@ -367,7 +367,7 @@ body.home {
 
 .inviter-link {
     display: block; 
-    width: 10vw; 
+    width: 9vw; 
     height: auto; 
     text-decoration: none;
     position: relative; 
@@ -394,7 +394,7 @@ body.home {
 
 .archifolies-link {
     display: block; 
-    width: 10vw; 
+    width: 9vw; 
     height: auto; 
     text-decoration: none;
     position: relative; 
@@ -421,7 +421,7 @@ body.home {
 
 .utopie1-link {
     display: block; 
-    width: 10vw; 
+    width: 9vw; 
     height: auto; 
     text-decoration: none;
     position: relative; 
@@ -448,7 +448,7 @@ body.home {
 
 .utopie2-link {
     display: block; 
-    width: 10vw; 
+    width: 9vw; 
     height: auto; 
     text-decoration: none;
     position: relative; 
@@ -475,7 +475,7 @@ body.home {
 
 .utopie3-link {
     display: block; 
-    width: 10vw; 
+    width: 9vw; 
     height: auto; 
     text-decoration: none;
     position: relative; 
