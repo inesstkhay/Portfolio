@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
                       "Spécialité \t\t\t\t\t\t :Architecture + Numérique\n" +
                       "Temps passé à concevoir \t\t :100000\n" +
                       "RAM Cérébrale \t\t\t\t\t :Faible\n" +
-                      "Années d'études complétées \t :4.5 (90%)\n\n" +
+                      "Années d'études complétées \t\t :4.5 (90%)\n\n" +
                       "\nPressez ENTREE pour commencer.";
 
 
