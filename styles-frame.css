@@ -1,7 +1,7 @@
 /* Styles communs pour toutes les pages */
 @font-face {
     font-family: 'MS Sans Serif';
-    src: url('ms-sans-serif.ttf') format('truetype');
+    src: url('MSSansSerif2-Regular.ttf') format('truetype');
 }
 
 body {

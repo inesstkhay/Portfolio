@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'MS Sans Serif';
-    src: url('ms-sans-serif.ttf') format('truetype');
+    src: url('MSSansSerif2-Regular.ttf') format('truetype');
 }
 
 @media only screen and (max-width: 900px) {
