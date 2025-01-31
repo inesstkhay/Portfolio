@@ -18,16 +18,19 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: #000000;
+        right: 0; /* Assure que l'élément occupe toute la largeur */
+        width: auto; /* Ajuste automatiquement la largeur */
+        min-height: 100%;
+        background-color: #000000; /* Fond noir pour toute la zone */
         color: #ffffff;
         padding: 10px;
-        text-align: left; /* Aligne le texte à gauche */
-        justify-content: space-between; /* Assure que le texte est justifié */
+        text-align: left;
+        justify-content: space-between;
         z-index: 9999;
-        overflow-y: auto; /* Permet le défilement si nécessaire */
-        white-space: pre-wrap; /* Respecte les sauts de ligne et les espaces */
+        overflow-y: auto;
+        white-space: pre-wrap;
+        margin-left: 10px; /* Marge gauche */
+        margin-right: 10px; /* Marge droite */
     }
 }
 
