@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
     const textElement = document.getElementById('loading-text');
     const textToType = "<div style='display: inline-block;'><img src='bios1.png' alt='bios'></div>" +
-                      "<div style='display: inline-block; vertical-align: top;'>\tINESS TKHAYYARE V1.0 2024\n \tPORTFOLIO NUMERIQUE\n</div>" +
+                      "<div style='display: inline-block; vertical-align: top;'>\tINESS TKHAYYARE V2.0 2025\n \tVISUAL WORKS\n</div>" +
                       "\nInstitution \t\t\t\t\t\t :ENSA Toulouse\n" +
-                      "Spécialité \t\t\t\t\t\t :Architecture + Numérique\n" +
+                      "Spécialité \t\t\t\t\t\t :Architecture\n" +
                       "Temps passé à concevoir \t\t :100000\n" +
                       "RAM Cérébrale \t\t\t\t\t :Faible\n" +
-                      "Années d'études complétées \t\t :4.5 (90%)\n\n" +
+                      "Années de thèse complétées \t :0.5 (15%)\n\n" +
                       "\nPressez ENTREE pour commencer.";
 
 
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Typewriting effect
-    typingInterval = setInterval(type, 50);
+    typingInterval = setInterval(type, 30);
 
     // Redirect to a new page on 'Enter' key press
     document.addEventListener('keydown', function (event) {
