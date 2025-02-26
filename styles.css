@@ -10,17 +10,18 @@
         content: "Architecte et doctorante, mon travail porte sur l’autonomisation des habitants dans la transformation de leur environnement, en explorant comment les pratiques collaboratives permettent une évolution durable des espaces.\A\A
         Ma recherche analyse les limites des processus de participation traditionnels, souvent hétéronomes, qui contraignent les usagers à des formes de participation subordonnées à des logiques néolibérales et capitalistes. À travers la mise en place d'une méthode de conception continue, je propose une approche où l’architecture évolue tout au long de la vie des espaces, intégrant les usages et l'imprévu comme facteur de transformation.\A\A
         L’architecte, dans cette approche, n’est pas un planificateur et executant, mais un facilitateur des dynamiques locales, soutenant les habitants dans la réappropriation de leurs espaces – un caretaker et architecte de terrain.Les luttes habitantes et les formes de construction collective sont donc des modèles de résistance aux logiques imposées par la production architecturale dominante.\A\A
-        Ma recherche questionne également l’utilisation des outils numériques en architecture, souvent centrés sur la planification formelle et un processus top-down. Je défends une approche ouverte, qui privilégie l’indéterminé, en réinventant le rôle des outils numériques pour encourager des pratiques de conception numérique plus ouvertes.";
+        Ma recherche questionne également l’utilisation des outils numériques en architecture, souvent centrés sur la planification formelle et un processus top-down. Je défends une approche ouverte, qui privilégie l’indéterminé, en réinventant le rôle des outils numériques pour encourager des pratiques de conception numérique plus ouvertes.\A\A
+        inesstkhay@gmail.com";
         
         font-family: 'MS Sans Serif', sans-serif;
         font-size: 15px;
         display: block;
         position: fixed;
-        top: 50%; /* Centrer verticalement */
-        left: 50%; /* Centrer horizontalement */
-        transform: translate(-50%, -50%); /* Ajuste pour centrer parfaitement */
-        width: 80%; /* Largeur fixe (ajustable) */
-        height: 80%; /* Hauteur fixe (ajustable) */
+        top: 50%; 
+        left: 50%; 
+        transform: translate(-50%, -50%); 
+        width: 80%; 
+        height: 80%; 
         background-color: #000000;
         color: #ffffff;
         padding: 10px;
@@ -135,7 +136,7 @@ body.chargement {
     cursor: url('cursor-normal.png') 10 10, auto;
 }
 
-.about-link:hover, .work-link:hover, .ref-link:hover, .archi101-link:hover, .game-link:hover, .peyriac-link:hover, .inviter-link:hover, .archifolies-link:hover, .utopie1-link:hover, .utopie2-link:hover, .utopie3-link:hover {
+.about-link:hover, .work-link:hover, .ref-link:hover, .archi101-link:hover, .thesetext-link:hover, .these-link:hover, .game-link:hover, .peyriac-link:hover, .inviter-link:hover, .archifolies-link:hover, .utopie1-link:hover, .utopie2-link:hover, .utopie3-link:hover {
     cursor: url('cursor-hover.png') 30 30, auto;
 }
 
@@ -289,6 +290,108 @@ body.home {
 
 .ref-link:hover img {
     transform: rotate(-30deg); 
+}
+
+
+/*these*/
+
+.these-button {
+    position: fixed;
+    top: 45%; 
+    left: 45%; 
+    transform: translate(-50%, -50%); 
+}
+
+.these-link {
+    display: block; 
+    width: 10vw; 
+    height: auto; 
+    text-decoration: none;
+    position: relative; 
+}
+
+.these-link img {
+    width: 100%; 
+    height: 100%; 
+    transition: transform 0.3s ease; 
+}
+
+.these-link:hover img {
+    transform: rotate(-30deg) scale(1.2) translateX(5px);
+}
+
+/* Style du texte caché */
+.these-link .hover-text {
+    position: absolute;
+    left: 50%;
+    top: 120%; /* Décalé sous le bouton */
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 14px;
+    color: black;
+    font-family: 'MS Sans Serif', sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    display: block; 
+}
+
+/* Affichage du texte au survol */
+.these-link:hover .hover-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/*thesetext*/
+.thesetext-button {
+    position: fixed;
+    top: 55%; 
+    left: 55%; 
+    transform: translate(-50%, -50%); 
+}
+
+/* Lien contenant l’image */
+.thesetext-link {
+    display: block; 
+    width: 8vw; 
+    height: auto; 
+    text-decoration: none;
+    position: relative; 
+}
+
+/* Image du bouton */
+.thesetext-link img {
+    width: 100%; 
+    height: 100%; 
+    transition: transform 0.3s ease; 
+}
+
+/* Effet au survol */
+.thesetext-link:hover img {
+    transform: rotate(30deg) scale(1.1) translateX(5px);
+}
+
+/* Style du texte caché */
+.thesetext-link .hover-text {
+    position: absolute;
+    left: 50%;
+    top: 120%; /* Décalé sous le bouton */
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 14px;
+    color: black;
+    font-family: 'MS Sans Serif', sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    display: block; 
+}
+
+/* Affichage du texte au survol */
+.thesetext-link:hover .hover-text {
+    opacity: 1;
+    visibility: visible;
 }
 
 /*2*/

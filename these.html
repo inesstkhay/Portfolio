@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles-frame.css">
+    <title>iness.png</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/asd" type="text/css"/>
+</head>
+<body class="about">
+
+
+    <style>
+        /* Conteneur du diagramme */
+        .pan-zoom-container {
+            width: 100%;
+            height: 99vh;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #ccc;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Diagramme (image) zoomable et déplaçable */
+        .pan-zoom-content {
+            position: absolute;
+            cursor: grab;
+            transition: transform 0.3s ease-out;
+        }
+
+        .pan-zoom-content img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Texte indicatif */
+        .zoom-text {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 18px;
+            color: #333;
+            font-family: 'MS Sans Serif';
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pan-zoom-container" id="pan-zoom-container">
+        <div class="pan-zoom-content" id="pan-zoom-content">
+            <img src="these/Diagramme.gif" alt="Diagramme" id="diagram-image">
+        </div>
+        <div class="zoom-text">Zoom et déplacement activés</div>
+    </div>
+
+    <script>
+        const container = document.getElementById('pan-zoom-container');
+        const content = document.getElementById('pan-zoom-content');
+        const image = document.getElementById('diagram-image');
+        let scale = 1;
+        let isDragging = false;
+        let startX, startY, offsetX = 0, offsetY = 0;
+
+        // Ajustement initial pour que l'image soit entièrement visible
+        function resetZoom() {
+            scale = 1;
+            content.style.transform = `scale(${scale}) translate(0, 0)`;
+            content.style.left = '0px';
+            content.style.top = '0px';
+        }
+
+        window.addEventListener('load', resetZoom);
+
+        // Gestion du zoom
+        container.addEventListener('wheel', function(event) {
+            event.preventDefault();
+            const zoomFactor = event.deltaY < 0 ? 1.05 : 0.95;
+            scale = Math.min(Math.max(0.5, scale * zoomFactor), 5);
+            content.style.transform = `scale(${scale})`;
+        });
+
+        // Déplacement par drag
+        container.addEventListener('mousedown', function(event) {
+            isDragging = true;
+            startX = event.clientX;
+            startY = event.clientY;
+            content.style.cursor = 'grabbing';
+        });
+
+        container.addEventListener('mousemove', function(event) {
+            if (isDragging) {
+                const dx = event.clientX - startX;
+                const dy = event.clientY - startY;
+                offsetX += dx;
+                offsetY += dy;
+                content.style.transform = `scale(${scale}) translate(${offsetX}px, ${offsetY}px)`;
+                startX = event.clientX;
+                startY = event.clientY;
+            }
+        });
+
+        document.addEventListener('mouseup', function() {
+            isDragging = false;
+            content.style.cursor = 'grab';
+        });
+    </script>
+
+</body>
+</html>
