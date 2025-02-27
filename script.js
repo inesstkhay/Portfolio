@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const textElement = document.getElementById('loading-text');
     const textToType = "<div style='display: inline-block;'><img src='bios1.png' alt='bios'></div>" +
-                      "<div style='display: inline-block; vertical-align: top;'>\tINESS TKHAYYARE V2.0 2025\n \tVISUAL WORKS\n</div>" +
+                      "<div style='display: inline-block; vertical-align: top;'>\tINESS TKHAYYARE V2.0 2025\n \tTRAVAUX EN COURS\n</div>" +
                       "\nInstitution \t\t\t\t\t\t :ENSA Toulouse\n" +
                       "Spécialité \t\t\t\t\t\t :Architecture\n" +
                       "Temps passé à concevoir \t\t :100000\n" +
