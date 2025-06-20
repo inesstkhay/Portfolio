@@ -9,10 +9,10 @@
     body::before {
         content: "Architecte et doctorante, mon travail porte sur l’autonomisation des habitants dans la transformation de leur environnement, en explorant comment les pratiques collaboratives permettent une évolution durable des espaces.\A\A
         Ma recherche analyse les limites des processus de participation traditionnels, souvent hétéronomes, qui contraignent les usagers à des formes de participation subordonnées à des logiques néolibérales et capitalistes. À travers la mise en place d'une méthode de conception continue, je propose une approche où l’architecture évolue tout au long de la vie des espaces, intégrant les usages et l'imprévu comme facteur de transformation.\A\A
-        L’architecte, dans cette approche, n’est pas un planificateur et executant, mais un facilitateur des dynamiques locales, soutenant les habitants dans la réappropriation de leurs espaces – un caretaker et architecte de terrain.Les luttes habitantes et les formes de construction collective sont donc des modèles de résistance aux logiques imposées par la production architecturale dominante.\A\A
+        L’architecte, dans cette approche, n’est pas un planificateur et executant, mais un facilitateur des dynamiques locales, soutenant les habitants dans la réappropriation de leurs espaces – un caretaker et architecte de terrain. Les luttes habitantes et les formes de construction collective sont donc des modèles de résistance aux logiques imposées par la production architecturale dominante.\A\A
         Ma recherche questionne également l’utilisation des outils numériques en architecture, souvent centrés sur la planification formelle et un processus top-down. Je défends une approche ouverte, qui privilégie l’indéterminé, en réinventant le rôle des outils numériques pour encourager des pratiques de conception numérique plus ouvertes.\A\A
         inesstkhay@gmail.com";
-        
+        /* autres styles inchangés */
         font-family: 'MS Sans Serif', sans-serif;
         font-size: 15px;
         display: block;
@@ -26,12 +26,20 @@
         color: #ffffff;
         padding: 10px;
         text-align: left;
-        justify-content: space-between;
         z-index: 9999;
-        overflow: hidden; /* Empêche le défilement */
-        white-space: pre-wrap; /* Respecte les sauts de ligne et les espaces */
+        overflow: hidden;
+        white-space: pre-wrap;
         margin: 0;
     }
+
+    body.lang-en::before {
+        content: "Architect and PhD candidate, my work centers on supporting residents (especially of working-class and marginalized neighborhoods) in reclaiming agency over the transformation of their environments, through collaborative and sustainable design practices.\A\A
+        My research analyzes the limits of traditional participatory processes in architecture that confine users to participation forms aligned with neoliberal logics. Through continuous design methods, I propose an approach where architecture evolves over time, integrating use and unpredictability as transformation drivers.\A\A
+        In this approach, the architect is not a top-down planner but a facilitator of local dynamics — an enabler and grassroots architect who works alongside residents to support the reclaiming and reimagining of their environments. Inhabitant-driven forms of resistance are understood as acts of defiance against dominant architectural production logics.\A\A
+        My research also questions the use of digital tools in architecture, which are often centered on formal planning and top-down processes. I advocate for an open-ended approach that embraces indeterminacy, reimagining the role of digital tools to support more inclusive and situated design practices.\A\A
+        inesstkhay@gmail.com";
+    }
+
     body::after {
         content: "";
         position: fixed;
@@ -39,10 +47,26 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #000000; /* Fond noir derrière */
-        z-index: 9998; /* Assure que le fond soit derrière le texte */
+        background-color: #000000;
+        z-index: 9998;
     }
 }
+
+#lang-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 10000;
+    background-color: black;
+    color: white;
+    font-family: 'MS Sans Serif', sans-serif;
+    font-size: 16px;
+    border: none;
+    text-decoration: underline;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
 
 body {
     margin: 0;

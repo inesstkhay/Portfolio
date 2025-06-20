@@ -18,7 +18,19 @@
             <img src="bios2.png" alt="bios2">
         </div>
     
+<button id="lang-toggle" style="position: fixed; top: 10px; right: 10px; z-index: 10000;">EN</button>
+
 
     <script src="script.js"></script>
+
+<script>
+  const button = document.getElementById('lang-toggle');
+  button.addEventListener('click', () => {
+    document.body.classList.toggle('lang-en');
+    button.textContent = document.body.classList.contains('lang-en') ? 'FR' : 'EN';
+  });
+</script>
+
+
 </body>
 </html>
