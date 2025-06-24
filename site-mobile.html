@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thèse - Mobile</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      align-items: center;
+      margin-top: 2em;
+    }
+
+    .button-container button {
+      font-family: 'MS Sans Serif', sans-serif;
+      font-size: 16px;
+      padding: 10px 20px;
+      background: #000;
+      color: #fff;
+      border: 1px solid #fff;
+      cursor: pointer;
+    }
+
+    #iframe-modal {
+      display: none;
+      position: fixed;
+      top: 10%;
+      left: 5%;
+      width: 90%;
+      height: 80%;
+      background-color: white;
+      z-index: 10000;
+    }
+
+    #iframe-modal iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-size: 20px;
+      background: transparent;
+      border: none;
+      color: black;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <p style="padding: 1em; text-align: justify; font-family: 'MS Sans Serif', sans-serif;">
+    Architecte et doctorante, mon travail porte sur l’autonomisation des habitants dans la transformation de leur environnement...
+  </p>
+
+  <div class="button-container">
+    <button onclick="openIframe('thesetext.html')">Texte thèse</button>
+    <button onclick="openIframe('these.html')">Diagramme</button>
+    <button onclick="openIframe('https://inesstkhay.github.io/sitethese/')">Site thèse</button>
+  </div>
+
+  <div id="iframe-modal">
+    <button class="close-btn" onclick="closeIframe()">X</button>
+    <iframe id="iframe-content" src=""></iframe>
+  </div>
+
+  <script>
+    function openIframe(url) {
+      document.getElementById('iframe-content').src = url;
+      document.getElementById('iframe-modal').style.display = 'block';
+    }
+
+    function closeIframe() {
+      document.getElementById('iframe-modal').style.display = 'none';
+      document.getElementById('iframe-content').src = '';
+    }
+  </script>
+
+</body>
+</html>

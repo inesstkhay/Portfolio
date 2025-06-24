@@ -52,6 +52,25 @@
     }
 }
 
+.ghost-cursor {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  background-image: url('cursor-hover.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 9999;
+  animation: glitch-exit 2s steps(2, end) forwards;
+}
+
+@keyframes glitch-exit {
+  0%   { filter: none; opacity: 1; }
+  33%  { filter: grayscale(100%); }
+  66%  { filter: invert(100%); }
+  100% { opacity: 0; }
+}
+
 #lang-toggle {
     position: fixed;
     top: 10px;
