@@ -22,12 +22,16 @@
         transform: translate(-50%, -50%); 
         width: 80%; 
         height: 80%; 
+        max-width: 90vw;
+        max-height: 90vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        box-sizing: border-box;
         background-color: #000000;
         color: #ffffff;
         padding: 10px;
         text-align: left;
         z-index: 9999;
-        overflow: hidden;
         white-space: pre-wrap;
         margin: 0;
     }
@@ -50,9 +54,8 @@
         background-color: #000000;
         z-index: 9998;
     }
-}
 
-.ghost-cursor {
+    .ghost-cursor {
   position: fixed;
   width: 60px;
   height: 60px;
@@ -84,6 +87,7 @@
     text-decoration: underline;
     padding: 6px 12px;
     cursor: pointer;
+}
 }
 
 
