@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
                       "Design Time Spent \t\t\t\t :100000\n" +
                       "Brain RAM \t\t\t\t\t\t :Low\n" +
                       "PhD Progress  \t\t\t\t\t :1y [██░░░░░░] (33%)\n\n" +
-                      "\nPress ENTER to begin.";
+                      "\nPress ENTER or CLICK to begin.";
 
 
     let index = 0;
@@ -32,6 +32,12 @@ document.addEventListener('DOMContentLoaded', function () {
             clearInterval(typingInterval);
         }
     });
+
+    if (document.body.classList.contains('chargement')) {
+    document.addEventListener('click', function () {
+        redirectToNewPage();
+    });
+}
 
     // Redirect to a new page
     function redirectToNewPage() {

@@ -11,42 +11,56 @@
 </head>
 <body class="home">
     <div class="background-container">
+    
+        <div id="fond-wrapper">
+  <img src="fond.png" id="fond-img" draggable="false">
+  <canvas id="draw-layer"></canvas>
+  <div id="drawing-zone-outline"></div>
+  <div id="color-preview"></div> <!-- ICI -->
+  <button id="save-button">Save</button>
+
 
         <div class="about-button">
             <a href="#" class="about-link" onclick="openInIframe('about.html')"> <!-- Modified link with onclick -->
-                <img src="9.png" alt="À propos">
+                <img src="9.png" alt="À propos" draggable="false">
             </a>
         </div>
 
         <div class="work-button">
             <a href="#" class="work-link" onclick="openInIframe('work.html')"> <!-- Modified link with onclick -->
-                <img src="7.png" alt="Expériences">
+                <img src="7.png" alt="Expériences" draggable="false">
             </a>
         </div>
         <div class="ref-button">
             <a href="#" class="ref-link" onclick="openInIframe('ref.html')"> <!-- Modified link with onclick -->
-                <img src="8.png" alt="Références">
+                <img src="8.png" alt="Références" draggable="false">
             </a>
         </div>
         <div class="these-button">
             <a href="#" class="these-link" onclick="openInIframe('these.html')"> <!-- Modified link with onclick -->
-                <img src="iconethese.png" alt="Thèse">
+                <img src="iconethese.png" alt="Thèse" draggable="false">
                 <span class="hover-text">Fieldwork</span>
             </a>
         </div>
 
         <div class="thesetext-button">
             <a href="#" class="thesetext-link" onclick="openInIframe('thesetext.html')"> <!-- Modified link with onclick -->
-                <img src="iconethesetext.png" alt="ThèseText">
+                <img src="iconethesetext.png" alt="ThèseText" draggable="false">
                 <span class="hover-text">Dissertation topic</span>
             </a>
         
             <div class="site-button">
     <a href="#" class="site-link" onclick="openInIframe('site.html')">
-        <img src="13.png" alt="site">
+        <img src="13.png" alt="site" draggable="false">
         <span class="hover-text">Platform experimentation</span>
     </a>
 </div>
+
+
+</div>
+
+
+
             
        <!-- anciens boutons
 <div class="archi101-button">
@@ -159,6 +173,45 @@
         <!--// filet rouge-->
 
         <style>
+
+            #fond-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 83vw;
+  max-width: 1500px;
+  aspect-ratio: 1500 / 768;
+}
+
+#fond-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+
+
+#draw-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+#drawing-zone-outline {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+}
+
             body {
               margin: 0;
               overflow: hidden; /* Pour éviter les barres de défilement */
@@ -192,85 +245,170 @@
               pointer-events: none; /* Le dessin ne bloque pas les clics sur les autres éléments */
               z-index: -1; /* Placer le dessin en arrière-plan */
             }
+
+        body.home {
+  background-color: black;
+  overflow: hidden;
+}
+
+            #draw-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0; /* TRÈS IMPORTANT pour rester derrière */
+    pointer-events: none; /* Empêche le canvas de bloquer les clics */
+}
+
+
+body:not(.home) #drawing-zone-outline {
+  display: none;
+}
+
+#color-preview {
+  position: absolute;
+  width: 1.9vw;
+  height: 1.9vw;
+  border: 2px inset #ccc;
+  background-color: black;
+  z-index: 5;
+  pointer-events: none;
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.4);
+
+  /* 👇 Position en pourcentage relative au fond */
+  left: 0.79%;
+  top: 89.4%;
+}
+
+
+#save-button {
+  position: absolute;
+  left: 26%;         /* aligné à droite du carré */
+  top: 89%;
+  transform: translateY(0%);
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 12px;
+  background-color: #c0c0c0;
+  border: 2px outset #fff;
+  padding: 2px 8px;
+  cursor: url('cursor-hover.png') 30 30, auto;
+  z-index: 6;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+}
+
+#save-button:active {
+  border: 2px inset #fff;
+}
+
+
           </style>
         </head>
         <body>
           <!-- Conteneur pour le dessin -->
-          <div class="drawing-container" id="drawingContainer"></div>
-        
-          <script>
-            let trails = [];
-            let currentColor = 0; // 0 -> rouge, 1 -> jaune, 2 -> bleu
-            let activeColor = 'red'; // Couleur actuelle du trail
-            let isMouseDown = false; // Variable pour savoir si le clic est maintenu
-            let lastPosition = { x: null, y: null }; // Pour garder la dernière position de la souris
-            const drawingContainer = document.getElementById('drawingContainer');
-        
-            // Fonction pour créer un trail (un point)
-            function createTrail(x, y, persist = false) {
-              const trail = document.createElement('div');
-              trail.classList.add('trail');
-              trail.style.backgroundColor = activeColor; // Appliquer la couleur
-              drawingContainer.appendChild(trail);
-              
-              // Positionner le trail à la position initiale
-              trail.style.left = `${x - 3}px`;  // Centrer le point
-              trail.style.top = `${y - 3}px`;
-        
-              // Garder les points visibles indéfiniment, pas de suppression
-              trails.push(trail);
-            }
-        
-            // Fonction pour dessiner une ligne entre deux points
-            function drawLine(x1, y1, x2, y2) {
-              const line = document.createElement('div');
-              line.classList.add('line');
-              line.style.backgroundColor = activeColor; // Couleur de la ligne
-              drawingContainer.appendChild(line);
-        
-              // Calculer la longueur et l'angle de la ligne
-              const dx = x2 - x1;
-              const dy = y2 - y1;
-              const length = Math.sqrt(dx * dx + dy * dy);
-              const angle = Math.atan2(dy, dx) * 180 / Math.PI;
-        
-              // Appliquer la transformation pour dessiner la ligne
-              line.style.width = `${length}px`;
-              line.style.transform = `rotate(${angle}deg)`;
-              line.style.left = `${x1 - length / 2}px`;
-              line.style.top = `${y1 - 3}px`; // Ajuster la ligne pour qu'elle commence au point (x1, y1)
-            }
-        
-            // Créer des traces pendant le mouvement de la souris
-            document.addEventListener('mousemove', (e) => {
-              if (isMouseDown) {
-                // Créer un trail au mouvement de la souris
-                if (lastPosition.x !== null && lastPosition.y !== null) {
-                  drawLine(lastPosition.x, lastPosition.y, e.clientX, e.clientY); // Dessiner une ligne
-                }
-                createTrail(e.clientX, e.clientY); // Ajouter un point
-                lastPosition = { x: e.clientX, y: e.clientY }; // Mettre à jour la dernière position
-              }
-            });
-        
-            // Garder le dessin lorsqu'on maintient le clic
-            document.addEventListener('mousedown', () => {
-              isMouseDown = true;
-              lastPosition = { x: null, y: null }; // Réinitialiser la dernière position
-            });
-        
-            document.addEventListener('mouseup', () => {
-              isMouseDown = false;
-              lastPosition = { x: null, y: null }; // Réinitialiser la dernière position
-            });
-        
-            // Changer la couleur au clic
-            document.addEventListener('click', () => {
-              const colors = ['red', 'yellow', 'blue'];
-              currentColor = (currentColor + 1) % colors.length;
-              activeColor = colors[currentColor];
-            });
-          </script>
+          <canvas id="draw-layer"></canvas>
+<div id="drawing-zone-outline"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  let currentColor = 'black'; // couleur actuelle utilisée pour dessiner
+    const canvas = document.getElementById('draw-layer');
+  const ctx = canvas.getContext('2d');
+  const zoneOutline = document.getElementById('drawing-zone-outline');
+  const wrapper = document.getElementById('fond-wrapper');
+
+  document.getElementById('save-button').addEventListener('click', function () {
+  const canvas = document.getElementById('draw-layer');
+  const link = document.createElement('a');
+  link.download = 'drawing.png';
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+});
+
+
+  let drawing = false;
+  let lastX = 0, lastY = 0;
+
+  function resizeEverything() {
+    const rect = wrapper.getBoundingClientRect();
+    canvas.width = rect.width;
+    canvas.height = rect.height;
+
+    // Crée un canvas temporaire pour lire les pixels de l’image
+const tmpCanvas = document.createElement('canvas');
+const tmpCtx = tmpCanvas.getContext('2d');
+
+const fondImg = document.getElementById('fond-img');
+fondImg.addEventListener('click', function (e) {
+  const rect = fondImg.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  // redimensionne le canvas temporaire à la taille de l’image
+  tmpCanvas.width = fondImg.width;
+  tmpCanvas.height = fondImg.height;
+  tmpCtx.drawImage(fondImg, 0, 0, fondImg.width, fondImg.height);
+
+  const pixel = tmpCtx.getImageData(x, y, 1, 1).data;
+  const [r, g, b] = pixel;
+
+  // Ignore les zones trop claires (comme le blanc)
+  const brightness = r + g + b;
+  if (brightness < 740) { // évite le fond blanc
+    currentColor = `rgb(${r},${g},${b})`;
+    document.getElementById('color-preview').style.backgroundColor = currentColor;
+  }
+});
+
+
+    // Zone blanche (approximativement) à l’intérieur de l'image
+    const drawX = rect.width * 0.055;
+    const drawY = rect.height * 0.085;
+    const drawWidth = rect.width * 0.935;
+    const drawHeight = rect.height * 0.79;
+
+    zoneOutline.style.left = `${drawX}px`;
+    zoneOutline.style.top = `${drawY}px`;
+    zoneOutline.style.width = `${drawWidth}px`;
+    zoneOutline.style.height = `${drawHeight}px`;
+  }
+
+  function isWithinDrawingArea(x, y) {
+    const rect = canvas.getBoundingClientRect();
+    const zone = zoneOutline.getBoundingClientRect();
+    return x >= zone.left && x <= zone.right && y >= zone.top && y <= zone.bottom;
+  }
+
+  document.addEventListener('mousedown', function(e) {
+    if (!document.body.classList.contains('home') || !isWithinDrawingArea(e.clientX, e.clientY)) return;
+    drawing = true;
+    [lastX, lastY] = [e.clientX - canvas.getBoundingClientRect().left, e.clientY - canvas.getBoundingClientRect().top];
+  });
+
+  document.addEventListener('mousemove', function(e) {
+    if (!drawing || !document.body.classList.contains('home') || !isWithinDrawingArea(e.clientX, e.clientY)) return;
+    const x = e.clientX - canvas.getBoundingClientRect().left;
+    const y = e.clientY - canvas.getBoundingClientRect().top;
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(x, y);
+    ctx.strokeStyle = currentColor;
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    [lastX, lastY] = [x, y];
+  });
+
+  document.addEventListener('mouseup', () => drawing = false);
+  document.addEventListener('mouseout', () => drawing = false);
+  window.addEventListener('resize', resizeEverything);
+
+  resizeEverything();
+});
+
+
+
+</script>
+
+
+
           
 </body>
 </html>
