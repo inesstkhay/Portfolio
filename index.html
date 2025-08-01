@@ -10,10 +10,10 @@
     </style>
 </head>
 <body class="chargement">
-    <div class="loader" id="loader" onclick="redirectToNewPage()">
-        <p id="loading-text" class="typing-text"></p>
-        <span id="cursor">_</span>
-    </div>
+        <div class="loader" id="loader">
+  <p id="loading-text" class="typing-text"></p>
+  <span id="cursor">_</span>
+</div>
         <div class="bios2">
             <img src="bios2.png" alt="bios2">
         </div>
@@ -45,6 +45,16 @@ document.addEventListener('click', function (e) {
     ghost.remove();
   }, 1000); // disparaît après 1s
 });
+</script>
+
+<script>
+  const loader = document.getElementById('loader');
+  loader.addEventListener('click', () => {
+    // Ne redirige que si l'écran est large (desktop)
+    if (window.innerWidth > 900) {
+      redirectToNewPage();
+    }
+  });
 </script>
 
 </body>

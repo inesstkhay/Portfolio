@@ -35,7 +35,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (document.body.classList.contains('chargement')) {
     document.addEventListener('click', function () {
-        redirectToNewPage();
+        if (window.innerWidth > 900) {
+            redirectToNewPage();
+        }
     });
 }
 
